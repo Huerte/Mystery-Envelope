@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday - Barbie Style!</title>
+    <title>Happy Birthday - Patrick</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -308,6 +308,22 @@
                 font-size: 1.5rem;
             }
         }
+
+        .click-hint {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #ff69b4;
+            font-family: 'Dancing Script', cursive;
+            animation: pulse 2s infinite;
+            cursor: pointer;
+            opacity: 0.85;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.85; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
     </style>
 </head>
 <body>
@@ -337,7 +353,7 @@
                 Level 32: Unlocked! 🎉
             </p>
 
-            <p class="footer-message">Barbie vibes. Just for you.</p>
+            <p class="click-hint">✨ Tap the card for a surprise ✨</p>
         </div>
     </div>
 
