@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday - Patrick</title>
+    <title>Mystery Envelope</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -324,11 +325,38 @@
             50% { transform: scale(1.1); opacity: 1; }
         }
 
+        @keyframes bounceShake {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            20% {
+                transform: translateY(-20px) rotate(-5deg);
+            }
+            40% {
+                transform: translateY(0px) rotate(5deg);
+            }
+            60% {
+                transform: translateY(-10px) rotate(-3deg);
+            }
+            80% {
+                transform: translateY(0px) rotate(3deg);
+            }
+        }
+
     </style>
 </head>
 <body>
     <div class="sparkles" id="sparkles"></div>
     
+    <div id="envelopeScreen" style="position:fixed; top:0; left:0; width:100%; height:100vh; background:#f2f2f2; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:10000;">
+        <i id="envelopeIcon" class="fas fa-envelope"
+        style="font-size:100px; color:#555; cursor:pointer; animation: bounceShake 1.5s infinite ease-in-out;"></i>
+        <p style="font-family:'Segoe UI', sans-serif; font-size:1rem; color:#666; font-weight: bold; margin-top:20px;">
+            Click the envelope to open your card
+        </p>
+    </div>
+
+
     <div class="card-container">
         <div class="birthday-card">
             <div class="bow">🎀</div>
@@ -362,6 +390,23 @@
     </div>
 
     <script>
+        const envelopeScreen = document.getElementById('envelopeScreen');
+        const envelopeImage = document.getElementById('envelopeIcon');
+        const cardContainer = document.querySelector('.card-container');
+        const sparkles = document.getElementById('sparkles');
+        const body = document.body;
+
+        cardContainer.style.display = 'none';
+        sparkles.style.display = 'none';
+
+        envelopeImage.addEventListener('click', () => {
+            envelopeScreen.style.display = 'none';
+            cardContainer.style.display = 'flex';
+            sparkles.style.display = 'block';
+            body.style.background = 'linear-gradient(135deg, #ff69b4, #ff1493, #da70d6, #ff69b4)';
+            body.style.animation = 'gradientShift 8s ease infinite';
+        });
+
         function createSparkle() {
             const sparkle = document.createElement('div');
             sparkle.className = 'sparkle';
