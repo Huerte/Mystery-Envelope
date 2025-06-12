@@ -404,6 +404,8 @@
         <img src="images/surprise.jpg" alt="Surprise Image" style="max-width:90vw; max-height:90vh; border:10px solid #fff; border-radius:20px; box-shadow:0 0 30px hotpink;">
     </div>
 
+    <audio id="bgMusic" src="music/Sofia_The_First_-_Sofia_The_First_Theme_Song.mp3" loop></audio>
+
     <script>
         const envelopeScreen = document.getElementById('envelopeScreen');
         const envelopeImage = document.getElementById('envelopeIcon');
@@ -415,6 +417,8 @@
         sparkles.style.display = 'none';
 
         envelopeImage.addEventListener('click', () => {
+            const music = document.getElementById('bgMusic');
+            music.play();
             envelopeScreen.style.display = 'none';
             cardContainer.style.display = 'flex';
             sparkles.style.display = 'block';
