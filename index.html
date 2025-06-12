@@ -342,6 +342,17 @@
                 transform: translateY(0px) rotate(3deg);
             }
         }
+.birthday-card .barbie-image {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 180px;
+    height: auto;
+    z-index: 0;
+    opacity: 0.9;
+    pointer-events: none;
+    transform: rotate(-5deg);
+}
 
     </style>
 </head>
@@ -377,11 +388,15 @@
                 <span class="heart">💖</span>
             </div>
 
-            <p class="message">
-                Level 32: Unlocked! 🎉
-            </p>
+            <div class="text-center mb-3" style="margin-left: -20px;">
+            <p class="message mb-2">Level 32: Unlocked! 🎉</p>
+            <p class="click-hint mb-3">✨ Tap the card for a surprise ✨</p>
+            </div>
 
-            <p class="click-hint">✨ Tap the card for a surprise ✨</p>
+            <div class="text-center">
+            <img src="images/aurora.png" alt="Barbie" class="barbie-image img-fluid">
+            </div>
+
         </div>
     </div>
 
